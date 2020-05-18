@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrationActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:text="Sign up"
+        android:textColor="#000"
+        />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:hint="Enter email"
+        tools:text="lubcho_sk8@abv.bg"
+        android:maxLines="1"
+        android:textSize="30sp"
+        android:background="@drawable/edit_text_design"
+        />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:hint="Enter name"
+        android:maxLines="1"
+        android:textSize="30sp"
+        android:background="@drawable/edit_text_design"
+        />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:hint="Enter password"
+        android:maxLines="1"
+        android:textSize="30sp"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_design"
+        />
+
+    <Button
+        android:id="@+id/registerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:text="Sign up"
+        android:background="@drawable/signupbtn"
+        android:textColor="#FFF"
+        />
+
+</LinearLayout>

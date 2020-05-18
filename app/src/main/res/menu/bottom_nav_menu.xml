@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/explore_item"
+        android:icon="@drawable/search_img"
+        android:title="Explore"
+        />
+
+    <item
+        android:id="@+id/trip_item"
+        android:icon="@drawable/trip_img"
+        android:title="Trips"
+        />
+
+    <item
+        android:id="@+id/me_item"
+        android:icon="@drawable/me_img"
+        android:title="Me"
+        />
+
+</menu>

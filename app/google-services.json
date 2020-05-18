@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "243046645420",
+    "firebase_url": "https://triporganizer-890f9.firebaseio.com",
+    "project_id": "triporganizer-890f9",
+    "storage_bucket": "triporganizer-890f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243046645420:android:a15dcd1b24b182b2b9e909",
+        "android_client_info": {
+          "package_name": "com.example.triporganizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243046645420-tgm5psjtoi3nbj0i7k42985112h6km7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.triporganizer",
+            "certificate_hash": "e3fe43935fe8859838cc2125c99a99759d42bac0"
+          }
+        },
+        {
+          "client_id": "243046645420-b311ni5d7jghh2m9fgqena7r2p3h5093.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXkmDGIn2uVSBTYnN1jJ4YiR780VQ5IOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243046645420-b311ni5d7jghh2m9fgqena7r2p3h5093.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
