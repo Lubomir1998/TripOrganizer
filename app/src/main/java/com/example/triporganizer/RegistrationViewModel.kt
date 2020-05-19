@@ -8,7 +8,7 @@ class RegistrationViewModel : ViewModel() {
     val ref = FirebaseDatabase.getInstance().getReference("User")
 
     fun addUser(e: String, n: String, p: String){
-        var user = User(e, n, p)
+        val user = User(e, n, p)
 
         ref.child(e).setValue(user)
 

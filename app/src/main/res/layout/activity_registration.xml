@@ -26,8 +26,9 @@
         android:layout_marginTop="70dp"
         android:hint="Enter email"
         tools:text="lubcho_sk8@abv.bg"
-        android:maxLines="1"
         android:textSize="30sp"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
         android:background="@drawable/edit_text_design"
         />
 
@@ -38,8 +39,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:hint="Enter name"
-        android:maxLines="1"
         android:textSize="30sp"
+        android:maxLines="1"
+        android:inputType="text"
         android:background="@drawable/edit_text_design"
         />
 
@@ -50,7 +52,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:hint="Enter password"
-        android:maxLines="1"
         android:textSize="30sp"
         android:inputType="textPassword"
         android:background="@drawable/edit_text_design"
