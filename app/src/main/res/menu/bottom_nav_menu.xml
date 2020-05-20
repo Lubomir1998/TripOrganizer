@@ -15,7 +15,7 @@
 
     <item
         android:id="@+id/me_item"
-        android:icon="@drawable/me_img"
+        android:icon="@drawable/person_img"
         android:title="Me"
         />
 

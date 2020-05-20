@@ -47,12 +47,13 @@ class RegistrationActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, "User already exists", Toast.LENGTH_SHORT).show()
                     }
                     else {
+
                         val user = User(
-                            emailField.text.toString(),
                             nameField.text.toString(),
                             passwordField.text.toString()
                         )
                         ref.child(emailField.text.toString()).setValue(user)
+
                         Toast.makeText(applicationContext, "Sign up successful", Toast.LENGTH_SHORT).show()
                         isRegistered = true
                         save()
@@ -82,8 +83,6 @@ class RegistrationActivity : AppCompatActivity() {
         editor.putString("nameKey", nameField.text.toString())
         editor.apply()
     }
-
-
 
 
 }
