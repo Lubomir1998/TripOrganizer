@@ -1,6 +1,7 @@
 package com.example.triporganizer
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,16 +18,20 @@ class RegistrationActivity : AppCompatActivity() {
     var isRegistered: Boolean = false
     val SHARED_PREFS: String = "shared_prefs"
 
+    lateinit var emailField: EditText
+    lateinit var nameField: EditText
+    lateinit var passwordField: EditText
+
+    val ref = FirebaseDatabase.getInstance().getReference("User")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        val emailField: EditText = findViewById(R.id.emailEditText)
-        val nameField: EditText = findViewById(R.id.nameEditText)
-        val passwordField: EditText = findViewById(R.id.passwordEditText)
-
-        val ref = FirebaseDatabase.getInstance().getReference("User")
+        emailField = findViewById(R.id.emailEditText)
+        nameField = findViewById(R.id.nameEditText)
+        passwordField = findViewById(R.id.passwordEditText)
 
 
         registerbtn.setOnClickListener {
@@ -52,7 +57,7 @@ class RegistrationActivity : AppCompatActivity() {
                         isRegistered = true
                         save()
                         finish()
-                        openMeFragment()
+                        startActivity(Intent(this@RegistrationActivity, MainActivity::class.java))
                     }
                 }
 
@@ -74,16 +79,11 @@ class RegistrationActivity : AppCompatActivity() {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
         editor.putBoolean("regKey", isRegistered)
+        editor.putString("nameKey", nameField.text.toString())
         editor.apply()
     }
 
 
-    fun openMeFragment(){
-        supportFragmentManager.
-        beginTransaction().
-        replace(R.id.frame, MeFragment()).
-        commit()
-    }
 
 
 }
