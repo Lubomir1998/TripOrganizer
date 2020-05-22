@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/log_out_toolbar"
+        />
+
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
@@ -31,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_fav"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         />
 

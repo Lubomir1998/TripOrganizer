@@ -1,3 +1,6 @@
 package com.example.triporganizer
 
-data class Trip (val tripName: String, val days: Int, val price: Int, val images: Array<Int>)
+import android.widget.ImageView
+
+data class Trip (
+    val mainImg: Int, val tripName: String, val days: Int, val price: Int)

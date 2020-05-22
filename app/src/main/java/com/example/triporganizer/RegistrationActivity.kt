@@ -48,15 +48,18 @@ class RegistrationActivity : AppCompatActivity() {
                     }
                     else {
 
-                        val user = User(
+                    // here we user UserDB class because in the database we need only user_name and user_password
+
+                        val user = UserInDB(
                             nameField.text.toString(),
                             passwordField.text.toString()
                         )
-                        ref.child(emailField.text.toString()).setValue(user)
 
+                        ref.child(emailField.text.toString()).setValue(user)
                         Toast.makeText(applicationContext, "Sign up successful", Toast.LENGTH_SHORT).show()
                         isRegistered = true
                         save()
+
                         finish()
                         startActivity(Intent(this@RegistrationActivity, MainActivity::class.java))
                     }
@@ -83,6 +86,5 @@ class RegistrationActivity : AppCompatActivity() {
         editor.putString("nameKey", nameField.text.toString())
         editor.apply()
     }
-
 
 }

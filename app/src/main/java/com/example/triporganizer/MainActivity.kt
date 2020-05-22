@@ -1,24 +1,23 @@
 package com.example.triporganizer
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     var registrationActivity = RegistrationActivity()
-    var a: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottomNav.selectedItemId = R.id.explore_item
+        bottomNav.selectedItemId = R.id.trip_item
 
         supportFragmentManager.
         beginTransaction().
-        replace(R.id.frame, ExploreFragment()).
+        replace(R.id.frame, TripFragment()).
         commit()
 
         // load isRegistered boolean
@@ -26,8 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.setOnNavigationItemSelectedListener { item ->
             lateinit var selectedFragment: Fragment
+            val reg = registrationActivity.isRegistered
 
             when(item.itemId){
+
+
                 R.id.explore_item -> selectedFragment = ExploreFragment()
                 R.id.trip_item -> selectedFragment = TripFragment()
 
@@ -35,12 +37,12 @@ class MainActivity : AppCompatActivity() {
           // instead he is going to see a screen with favourite trips (if there are any)
 
                 R.id.me_item ->
-                 if(!registrationActivity.isRegistered) {
-                    selectedFragment = SignUpFragment()
-                }
-                 else{
-                    selectedFragment = MeFragment()
-                }
+                    if(reg){
+                        selectedFragment = MeFragment()
+                    }else {
+                        selectedFragment = SignUpFragment()
+                    }
+
 
             }
 
@@ -58,4 +60,6 @@ class MainActivity : AppCompatActivity() {
         val s = getSharedPreferences(registrationActivity.SHARED_PREFS, MODE_PRIVATE)
         registrationActivity.isRegistered = s.getBoolean("regKey", false)
     }
+
+
 }
