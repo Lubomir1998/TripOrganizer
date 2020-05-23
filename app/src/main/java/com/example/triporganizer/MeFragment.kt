@@ -21,8 +21,6 @@ class MeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_me, container, false)
 
-        (activity as? AppCompatActivity)?.supportActionBar?.hide()
-
         val textView = view.findViewById<TextView>(R.id.textview)
         val textView2 = view.findViewById<TextView>(R.id.noFav)
         recyclerView = view.findViewById(R.id.recyclerview_fav)

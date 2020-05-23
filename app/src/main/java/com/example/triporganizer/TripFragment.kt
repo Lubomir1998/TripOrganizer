@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_trip.*
+import androidx.viewpager.widget.ViewPager
 
-class TripFragment : Fragment(), TripAdapter.onItemClickListener {
+class TripFragment : Fragment(), TripAdapter.OnItemClickListener {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,13 +45,19 @@ class TripFragment : Fragment(), TripAdapter.onItemClickListener {
         recyclerView.setHasFixedSize(true)
 
 
+
         return view
     }
 
     override fun onItemClicked(tripp: Trip) {
-        // detail for trip
-
+        val intent = Intent(activity, DetailTripActivity::class.java)
+        intent.putExtra("name", tripp.tripName)
+        startActivity(intent)
+        activity?.overridePendingTransition(R.anim.slide_right_first, R.anim.slide_right_second)
     }
+
+
+
 
 
 }
