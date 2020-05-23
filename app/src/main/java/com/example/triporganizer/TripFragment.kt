@@ -25,18 +25,30 @@ class TripFragment : Fragment(), TripAdapter.OnItemClickListener {
 
         val tripList = ArrayList<Trip>()
 
-        // to trip will be added a new characteristic:
-        // mutable list of images wich will be shown in a view pager in the detailed activity
 
-        // this photo (football_field) is  just for review
 
-        val paris = Trip(R.drawable.football_field, "Paris", 5, 100)
+        val parisSwileImg = ArrayList<Int>()
+        parisSwileImg.add(R.drawable.parisfirst)
+        parisSwileImg.add(R.drawable.parissecond)
+        parisSwileImg.add(R.drawable.paristhird)
+        val paris = Trip(R.drawable.parismain, "Paris", 5, 100, parisSwileImg)
         tripList.add(paris)
 
-        val rome = Trip(R.drawable.football_field, "Ancient Rome", 4, 120)
+
+        val romeSwileImg = ArrayList<Int>()
+        romeSwileImg.add(R.drawable.romefirst)
+        romeSwileImg.add(R.drawable.romesecond)
+        romeSwileImg.add(R.drawable.romethird)
+        romeSwileImg.add(R.drawable.romeforth)
+        romeSwileImg.add(R.drawable.romefifth)
+        val rome = Trip(R.drawable.romemain, "Ancient Rome", 4, 120, romeSwileImg)
         tripList.add(rome)
 
-        val barcelona = Trip(R.drawable.football_field, "Sunny Barca", 7, 300)
+        val barcaSwileImg = ArrayList<Int>()
+        barcaSwileImg.add(R.drawable.barcelonafirst)
+        barcaSwileImg.add(R.drawable.barcelonasecond)
+        barcaSwileImg.add(R.drawable.barcelonathird)
+        val barcelona = Trip(R.drawable.barcelonamain, "Sunny Barca", 7, 300, barcaSwileImg)
         tripList.add(barcelona)
 
 
@@ -52,6 +64,7 @@ class TripFragment : Fragment(), TripAdapter.OnItemClickListener {
     override fun onItemClicked(tripp: Trip) {
         val intent = Intent(activity, DetailTripActivity::class.java)
         intent.putExtra("name", tripp.tripName)
+        intent.putIntegerArrayListExtra("photolist", tripp.slideImages)
         startActivity(intent)
         activity?.overridePendingTransition(R.anim.slide_right_first, R.anim.slide_right_second)
     }
